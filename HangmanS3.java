@@ -1,6 +1,10 @@
+// See problem description in the readme file of the repo
+
+// Import scanner in order to ask for input
 import java.util.Scanner;
 
 public class HangmanS3 {
+    // Method to check if given a secret word and an array of guessed letters, is the word already guessed or not
     public static boolean isWordGuessed(String secretWord, char[] lettersGuessed) {
         for (int i = 0; i < secretWord.length(); i++) {
             char c = secretWord.charAt(i);
@@ -11,6 +15,7 @@ public class HangmanS3 {
         return true;
     }
 
+    // Method to return the "guessedWord" with either the already guessed characters or underscores in place of
     public static String getGuessedWord(String secretWord, char[] lettersGuessed) {
         String aux = new String(secretWord);
         for (int i = 0; i < secretWord.length(); i++) {
@@ -22,6 +27,7 @@ public class HangmanS3 {
         return aux;
     }
 
+    // Method to return the available letters from the US alphabet, given an array of already guessed letters
     public static String getAvailableLetters(char[] lettersGuessed) {
         String letters = "abcdefghijklmnopqrstuvwxyz";
         String aux = new String(letters);
